@@ -61,8 +61,8 @@ const Home = ({ navigation }) => {
 
 			{reviews &&
 			reviews.length === 0 && (
-				<View style={styles.errorMessage}>
-					<Text>No Review Found. Add Review And TryAgain!</Text>
+				<View style={styles.textContainer}>
+					<Text style={styles.errorMessage}>No Review Found. Add Review And TryAgain!</Text>
 				</View>
 			)}
 		</View>
@@ -74,7 +74,12 @@ Home.propTypes = {
 };
 
 const styles = StyleSheet.create({
-	modalToggle  : {
+	textContainer : {
+		flex   : 1,
+		height : 100,
+		// width  : 100,
+	},
+	modalToggle   : {
 		justifyContent : "center",
 		alignItems     : "center",
 		marginBottom   : 10,
@@ -84,16 +89,19 @@ const styles = StyleSheet.create({
 		borderRadius   : 10,
 		alignSelf      : "center",
 	},
-	modalClose   : {
+	modalClose    : {
 		marginTop    : 20,
 		marginBottom : 0,
 	},
-	modalContent : {
+	modalContent  : {
 		flex : 1,
 	},
-	errorMessage : {
-		justifyContent : "center",
-		alignItems     : "center",
+	errorMessage  : {
+		color        : "crimson",
+		marginTop    : 0,
+		marginBottom : 0,
+		marginLeft   : "auto",
+		marginRight  : "auto",
 		// verticalAlign  : "middle",
 	},
 });
