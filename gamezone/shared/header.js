@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Header ({ title, navigation }) {
+const Header = ({ title, navigation }) => {
 	const handleOpenDrawer = () => navigation.openDrawer();
 
 	return (
@@ -14,7 +15,12 @@ export default function Header ({ title, navigation }) {
 			</View>
 		</ImageBackground>
 	);
-}
+};
+
+Header.propsTypes = {
+	title      : PropTypes.string.isRequired,
+	navigation : PropTypes.object.isRequired,
+};
 
 const styles = StyleSheet.create({
 	header      : {
@@ -43,3 +49,5 @@ const styles = StyleSheet.create({
 		marginHorizontal : 10,
 	},
 });
+
+export default Header;

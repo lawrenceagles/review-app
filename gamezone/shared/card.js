@@ -1,13 +1,13 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-export default function Card ({ children }) {
+const Card = ({ children }) => {
 	return (
 		<View style={styles.card}>
 			<View style={styles.cardContent}>{children}</View>
 		</View>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	card        : {
@@ -26,3 +26,5 @@ const styles = StyleSheet.create({
 		marginVertical   : 20,
 	},
 });
+
+export default Card;

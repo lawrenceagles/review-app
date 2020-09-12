@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { TextInput, View, Text } from "react-native";
 import { globalStyles } from "../styles/global.js";
 import { Formik } from "formik";
@@ -57,12 +58,16 @@ const ReviewForm = ({ addReview }) => {
 						/>
 						<Text style={globalStyles.errorText}>{props.touched.rating && props.errors.rating}</Text>
 
-						<CustomButton onPress={props.handleSubmit} text='submit' />
+						<CustomButton onPress={props.handleSubmit} text='Add' />
 					</View>
 				)}
 			</Formik>
 		</View>
 	);
+};
+
+ReviewForm.propTypes = {
+	addReview : PropTypes.func.isRequired,
 };
 
 export default ReviewForm;
